@@ -5,7 +5,7 @@ from .models import Article, UserArticleRelation
 
 @admin.register(Article)
 class ArticleAdmin(ModelAdmin):
-    pass
+    list_display = ('title', 'site', 'pub_date')
 
 @admin.register(UserArticleRelation)
 class UserArticleRelationAdmin(ModelAdmin):
