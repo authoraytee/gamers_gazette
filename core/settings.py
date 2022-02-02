@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     # 'api',         
 
     'articles',
-    # 'games',
+    'games',
 ]
 
 MIDDLEWARE = [
