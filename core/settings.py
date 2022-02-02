@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     
     # 'admin_custom',
     'accounts',
-    # 'api',         
+    'api',         
 
     'articles',
     'games',

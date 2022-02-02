@@ -3,7 +3,7 @@ from rest_framework.mixins import UpdateModelMixin
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.permissions import IsAuthenticated
-from core.permissions import IsOwnerOrReadOnly
+from api.permissions import IsOwnerOrReadOnly
 from django.shortcuts import render
 from django.db.models import Avg
 

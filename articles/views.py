@@ -3,7 +3,7 @@ from rest_framework.mixins import UpdateModelMixin
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.permissions import IsAuthenticated
-from core.permissions import IsOwnerOrReadOnly
+from api.permissions import IsOwnerOrReadOnly
 from django.shortcuts import render
 from django.db.models import Avg
 
@@ -34,13 +34,3 @@ class ArticleViewSet(ModelViewSet):
 class UserArticleRelationView(UpdateModelMixin, GenericViewSet):
     # permission_classes = [IsAuthenticated]
     queryset = UserArticleRelation.objects.all()
-        
-    serializer_class = UserArticleRelationSerializer
-    lookup_field = 'article'
-
-    def get_object(self):
-        obj, created = UserArticleRelation.objects.get_or_create(
-            user=self.request.user,
-            article_id=self.kwargs['article']) 
-
-        return obj
