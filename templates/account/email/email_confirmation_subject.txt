@@ -1,0 +1,5 @@
+{% load i18n %}
+
+{% autoescape off %}
+    {% block content %} Confirm Your Sign Up {% endblock %}
+{% endautoescape %}

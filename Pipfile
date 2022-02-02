@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "~=3.1.14"
+psycopg2-binary = "*"
+pyyaml = "==5.3.1"
+uritemplate = "==3.0.1"
+drf-yasg = "==1.17.1"
+django-allauth = "==0.42.0"
+pillow = "==7.2.0"
+environs = "*"
+django-debug-toolbar = "*"
+social-auth-app-django = "*"
+django-debug-toolbar-force = "*"
+django-filter = "*"
+pytz = "*"
+djangorestframework = "~=3.11.0"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
