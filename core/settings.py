@@ -1,12 +1,19 @@
-import os
 from pathlib import Path
+import os
+from environs import Env
 import socket
+
+env = Env()
+env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# SECRET_KEY = env("DJANGO_SECRET_KEY")
 SECRET_KEY = '!^j1*vv$ue1u%@&wv8)li+!46*ed4a9_c$$4fd$fvk8w^*wx3_'
 
+# DEBUG = env.bool("DJANGO_DEBUG")
 DEBUG = True
+
 
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 
