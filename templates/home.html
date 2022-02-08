@@ -1,21 +1,23 @@
 {% extends '_base.html' %}
 {% load static %}
 
-{% block title %}gamers gazetter{% endblock title%}
+{% block title %}gamers gazette{% endblock title%}
 
 {% block content %}
 
-Салам это главная старница
+    {% if user.is_authenticated %}
+        Hi {{ user.username}}
+        <!--- superuser settings ----->
+        {% if user.is_superuser %}
+          <br>
+          <h6>You are superuser</h6>
+          <a href="{% url 'admin_home%' }">Go to admin panel</a>
+          <br>
+        {% endif %}
+    {% endif %}
 
-хоум страница
+    <h4>home page</h4>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
+    <br>
+    <br>
 {% endblock content %}

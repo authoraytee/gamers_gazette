@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     
-    # 'admin_custom',
+    'admin_custom',
     'accounts',
     'api',         
 

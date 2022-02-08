@@ -10,14 +10,9 @@
     {% if user.is_authenticated %}
       Hi {{ user.username}}
       <a href="{% url 'account_logout' %}">logout</a>
-      {% if user.is_superuser %}
-      <br>
-      <br>
-      <h5>You are superuser</h5>
-      <br>
-      <br>
-    {% endif %}
+      <a href="#">my profile</a>
     {% else %}
+      <!-- Not authenticated -------->
       <a href="{% url 'account_signup' %}">Sign up</a>
       <a href="{% url 'account_login' %}">Log in</a>
     {% endif %}
