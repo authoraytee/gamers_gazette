@@ -2,11 +2,16 @@ from django.db import models
 from accounts.models import CustomUser
 
 class Article(models.Model):
+
+
+    # comments = models.IntegerField(default=0)
+
     title = models.CharField(max_length=150)
     link = models.CharField(max_length=175)
     text = models.TextField()
     site = models.CharField(max_length=25, default='gamers gazetter')
     pub_date = models.DateTimeField(auto_now_add=True)
+    cover = models.ImageField(blank=True, upload_to='articles/covers/')
 
     owner = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, related_name='my_articles')
     readers = models.ManyToManyField(CustomUser, through='UserArticleRelation', related_name='articles')

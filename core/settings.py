@@ -5,18 +5,16 @@ import socket
 
 env = Env()
 env.read_env()
-
-BASE_DIR = Path(__file__).resolve().parent.parent
-
 # SECRET_KEY = env("DJANGO_SECRET_KEY")
-SECRET_KEY = '!^j1*vv$ue1u%@&wv8)li+!46*ed4a9_c$$4fd$fvk8w^*wx3_'
-
 # DEBUG = env.bool("DJANGO_DEBUG")
+
+SECRET_KEY = '!^j1*vv$ue1u%@&wv8)li+!46*ed4a9_c$$4fd$fvk8w^*wx3_'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
+BASE_DIR = Path(__file__).resolve().parent.parent
 
+ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -40,6 +38,8 @@ INSTALLED_APPS = [
 
     'articles',
     'games',
+
+    'just_tests',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.cache.FetchFromCacheMiddleware',
 ]
 
-# Кешируем 
+# Cashing ------------------------------------------
 CACHE_MIDDLEWARE_ALIAS =  'default'
 CACHE_MIDDLEWARE_SECONDS =  604800 # 1 week
 CACHE_MIDDLEWARE_KEY_PREFIX = '' 
@@ -122,10 +122,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-AUTH_USER_MODEL = 'accounts.CustomUser'
-
-
+# Rest --------------------------------------------------------
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',
@@ -135,7 +132,7 @@ REST_FRAMEWORK = {
     )
 }
 
-
+# Static -------------------------------------------------------
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
@@ -149,6 +146,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 
 SITE_ID = 1
+
+# Auth ----------------------------------------------------------
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 LOGIN_REDIRECT_URL = 'home'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
@@ -166,6 +166,7 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
+# Email ----------------------------------------------------------
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
 
 EMAIL_HOST = 'smtp.gmail.com'
@@ -178,6 +179,6 @@ EMAIL_USE_SSL = False
 SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-# for toolbar
+# Debug toolbar --------------------------------------------------------
 hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
 INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
