@@ -1,0 +1,22 @@
+{% load static %}
+
+{% block title %}test{% endblock title%}
+
+{% block content %}
+
+    {% for article in object_list %}
+        <ul>
+            <li>{{ article.id }}</li>
+            <li>{{ article.title }}</li>
+            <li>{{ article.link }}</li>
+            <li>{{ article.text }}</li>
+            <li>{{ article.site }}</li>
+            <li>{{ article.pub_date }}</li>
+            {% if article.cover %}
+                <img src="{{ article.cover.url }}" alt="{{ article.title }}">
+            {% endif %}
+        </ul>
+    {% endfor %}
+
+    
+{% endblock content %}

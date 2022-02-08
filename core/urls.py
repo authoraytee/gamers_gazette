@@ -13,6 +13,8 @@ urlpatterns = [
     # for users
     path('accounts/', include('allauth.urls')),
     path('api/', include('api.urls')),
+
+    path('test/', include('just_tests.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
