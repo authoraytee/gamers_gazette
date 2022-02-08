@@ -18,7 +18,7 @@ class ArticlesSerializer(ModelSerializer):
 
     class Meta:
         model = Article
-        fields = ('id', 'title', 'link', 'text', 'site', 'pub_date', 'rating', 'likes', 'owner_name', 'readers')
+        fields = ('id', 'title', 'link', 'text', 'site', 'pub_date', 'cover', 'rating', 'likes', 'owner_name', 'readers')
 
 
 class UserArticleRelationSerializer(ModelSerializer):
