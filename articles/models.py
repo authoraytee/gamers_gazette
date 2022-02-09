@@ -1,6 +1,5 @@
 from django.db import models
 from accounts.models import CustomUser
-from django.contrib.auth import get_user_model
 
 class Article(models.Model):
     title = models.CharField(max_length=150)
@@ -37,9 +36,13 @@ class UserArticleRelation(models.Model):
         return f'{self.user.username} - article:{self.article.id}.{self.article.title}, rate:{self.rate}'
 
 class Comment(models.Model):
-    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    article = models.ForeignKey(
+        Article, 
+        on_delete=models.CASCADE, 
+        related_name='comments'
+    )
     comment = models.CharField(max_length=200)
-    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.comment
