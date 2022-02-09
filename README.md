@@ -16,9 +16,6 @@
  - ![](https://img.shields.io/badge/-celery-eb6363)
  - ![](https://img.shields.io/badge/-postgresql-4788ff)
  - ![](https://img.shields.io/badge/-docker-4f75ff)
-##### Python libruaries:
- - ![](https://img.shields.io/badge/-psycopg2-69fae9)
- - ![](https://img.shields.io/badge/-djangorestframework-ff1717)
 
 ## Used resources:
 
