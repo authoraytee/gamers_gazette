@@ -11,12 +11,12 @@ class Game(models.Model):
     tags = models.JSONField(blank=True, null=True)
     metacritic_rating = models.CharField(max_length=8, default='Not set')
     esb_rating = models.CharField(max_length=25, default='None')
+    cover = models.ImageField(blank=True, upload_to='games/covers/')
 
     subscribers = models.ManyToManyField(CustomUser, through='UserGameRelation', related_name='games')
 
     def __str__(self):
         return f'Id {self.id}: {self.name}'
-
 
 class UserGameRelation(models.Model):
     RATE_CHOICES = (

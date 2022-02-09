@@ -17,7 +17,7 @@ class GamesSerializer(ModelSerializer):
 
     class Meta:
         model = Game
-        fields = ('id', 'name', 'release_date', 'platforms', 'requirements', 'genres', 'tags', 'metacritic_rating', 'esb_rating', 'rating', 'likes', 'subscribers')
+        fields = ('id', 'name', 'release_date', 'platforms', 'requirements', 'genres', 'tags', 'metacritic_rating', 'esb_rating', 'cover', 'rating', 'likes', 'subscribers')
 
 class UserGameRelationSerializer(ModelSerializer):
     class Meta:
