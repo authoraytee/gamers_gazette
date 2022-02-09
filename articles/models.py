@@ -5,7 +5,7 @@ class Article(models.Model):
     title = models.CharField(max_length=150)
     link = models.CharField(max_length=175)
     text = models.TextField()
-    site = models.CharField(max_length=25, default='gamers gazetter')
+    site = models.CharField(max_length=25, default='Gamers Gazette')
     pub_date = models.DateTimeField(auto_now_add=True)
     cover = models.ImageField(blank=True, upload_to='articles/covers/')
 
