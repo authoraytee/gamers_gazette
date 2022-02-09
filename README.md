@@ -6,7 +6,7 @@
 ## What it can
 
 #### Gamers gazette is a platform where you can find games at the best prices and the latest industry news from major informational sources.
-Сan be found at: **[https://gamers-gazette.com/]()** 
+Сan be found at: **[https://gamers-gazette.com/]()** (do not works now)
 
 ## Requirements:
 ##### Technologies:
