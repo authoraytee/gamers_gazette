@@ -25,6 +25,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
 
+    # for basic security
+    # CORS requires the server to include specific HTTP headers
+    'corsheaders',
+
+
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -46,6 +51,7 @@ MIDDLEWARE = [
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware', # CORS
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -121,6 +127,14 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+# CORS -------------------------------------------------------
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    'http://localhost:8000',
+)
+
 
 # Rest --------------------------------------------------------
 REST_FRAMEWORK = {
