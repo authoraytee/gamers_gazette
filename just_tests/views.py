@@ -1,6 +1,6 @@
 from django.views.generic import ListView
-from games.models import Game
-from articles.models import Article
+from api.games.models import Game
+from api.articles.models import Article
 
 class GamesTestList(ListView):
     model = Game

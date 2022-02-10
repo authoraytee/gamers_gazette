@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'accounts',
     'api',         
 
-    'articles',
-    'games',
+    'api.articles',
+    'api.games',
 
     'just_tests',
 ]
