@@ -130,3 +130,5 @@ dmypy.json
 
 media/games/covers/
 media/articles/covers/
+
+just_tests/
