@@ -43,8 +43,6 @@ INSTALLED_APPS = [
 
     'api.articles',
     'api.games',
-
-    'just_tests',
 ]
 
 MIDDLEWARE = [
