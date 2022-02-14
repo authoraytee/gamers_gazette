@@ -1,5 +1,5 @@
 from rest_framework.routers import SimpleRouter
-from .views import ArticleViewSet, UserArticleRelationView
+from .viewsets import ArticleViewSet, UserArticleRelationView
 
 router = SimpleRouter()
 router.register(r'', ArticleViewSet)

@@ -1,5 +1,5 @@
 from rest_framework.routers import SimpleRouter
-from .views import GameViewSet, UserGameRelationView
+from .viewsets import GameViewSet, UserGameRelationView
 
 router = SimpleRouter()
 router.register(r'', GameViewSet)
