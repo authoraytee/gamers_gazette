@@ -20,11 +20,10 @@ class GameViewSet(ModelViewSet):
         rating=Avg('usergamerelation__rate')
         ).prefetch_related('subscribers')
     serializer_class = GamesSerializer
-    #filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
-    # filter_fields = ['name', 'platforms', 'genres', 'tags']   
-    # search_fields = ['name']
-    # ordering_fields = ['name', 'platforms', 'genres', 'tags', 'metacritic_rating', 'esb_rating']
-
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filter_fields = ['name'] # ?name=name (второй титл-название)
+    search_fields = ['name', 'rating', 'likes'] # ?search=name (вместо name само название)
+    ordering_fields = ['name', 'release_date', 'metacritic_rating', 'esb_rating', 'rating', 'likes'] # ?ordering=rating
 
 class UserGameRelationView(UpdateModelMixin, GenericViewSet):
     # permission_classes = [IsAuthenticated]

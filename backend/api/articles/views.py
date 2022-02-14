@@ -21,9 +21,9 @@ class ArticleViewSet(ModelViewSet):
         ).select_related('owner').prefetch_related('readers')
     serializer_class = ArticlesSerializer
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
-    filter_fields = ['title', 'site', 'link'] # ?title=title 
-    search_fields = ['title', 'site'] # ?search=title (вместо title сам название)
-    ordering_fields = ['pub_date', 'rating', 'likes'] # ?ordering=rating
+    filter_fields = ['title', 'site', 'link'] # ?title=title (второй титл-название)
+    search_fields = ['title', 'site', 'link'] # ?search=title (вместо title само название)
+    ordering_fields = ['title', 'pub_date', 'rating', 'likes'] # ?ordering=rating
 
     # Переопределение perform_create из ModelViewSet класса
     def perform_create(self, serializer):
