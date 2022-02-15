@@ -11,7 +11,8 @@
         {% if user.is_superuser %}
           <br>
           <h6>You are superuser</h6>
-          <a href="{% url 'admin_home%' }">Go to admin panel</a>
+          <a href="{% url 'admin_home' %}">Go to admin panel</a>
+          <a href="{% url 'admin:index' %}">Go to Django Admin</a>
           <br>
         {% endif %}
     {% endif %}
