@@ -128,8 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-media/games/covers/
-media/articles/covers/
+backend/media/games/covers/
+backend/media/articles/covers/
 
 just_tests/
 
