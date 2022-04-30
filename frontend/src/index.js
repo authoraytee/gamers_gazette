@@ -5,10 +5,18 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import './index.css';
-import ArticlesApp from './ArticlesApp';
-import GamesApp from './GamesApp';
+import './css/index.css';
+import './css/my_config.css';
+import './css/normalize.css';
+
+import './css/parts/header.css';
+import './css/parts/footer.css';
+
+
+import ArticlesApp from './apps/ArticlesApp';
+import GamesApp from './apps/GamesApp';
 import reportWebVitals from './reportWebVitals';
+
 
 const Routing = () => {
   return(
